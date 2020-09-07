@@ -1,0 +1,9 @@
+<div class="col-xs-12">
+
+
+  <h2>Mes trucs à faire :</h2>
+  <ul class="list-group">
+    <app-tasks *ngFor="let task of tasks; let i = index" [taskName]="task.name" [indexOfTask]="i" [id]="task.id"></app-tasks>
+
+
+  </ul>
