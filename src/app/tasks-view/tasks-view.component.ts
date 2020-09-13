@@ -1,6 +1,6 @@
 import { Injectable, Component, OnInit } from '@angular/core';
 import { taskService } from '../services/task.services';
-
+import { ApiService } from '../services/ApiService';
 
 
 @Component({
@@ -11,20 +11,27 @@ import { taskService } from '../services/task.services';
 
 @Injectable()
 export class TasksViewComponent implements OnInit {
-
+api$;
 tasks: any [];
 
 
-  constructor(private taskService: taskService, ) {
+  constructor(private taskService: taskService, private apiService: ApiService ) {
     
     
    }
 
-    
+  fetchPeople(){
+    this.api$ = this.apiService.fetchPoeple();
+  }
 
   ngOnInit() {
-    this.tasks = this.taskService.tasks;
+    
     
   }
+
+  effacer(id: number){
+    this.api$ = this.apiService.delete(id);
+    console.log(id)
+    };
 
 }

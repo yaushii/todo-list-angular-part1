@@ -3,7 +3,15 @@
 
   <h2>Mes trucs à faire :</h2>
   <ul class="list-group">
-    <app-tasks *ngFor="let task of tasks; let i = index" [taskName]="task.name" [indexOfTask]="i" [id]="task.id"></app-tasks>
+    <button (click)="fetchPeople()">récuperer le taches depuis l'api</button>
+    
+    <ul>
+       <h4 *ngFor="let name of api$ |async">{{ name.name}} {{ name.id}}
+        <button class="btn btn-danger" (click)="effacer(name.id)" >Effacer</button></h4>
+      
+    </ul>
 
+    <!-- <app-tasks *ngFor="let task of tasks; let i = index" [taskName]="task.name" [indexOfTask]="i" [id]="task.id"></app-tasks> -->
+ 
 
   </ul>

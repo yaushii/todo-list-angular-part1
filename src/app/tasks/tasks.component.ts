@@ -12,9 +12,6 @@ import { taskService } from '../services/task.services';
 
 export class TasksComponent implements OnInit {
 
-@Input() taskName: string;
-@Input() indexOfTask: number;
-@Input() id: number;
 
   constructor(private taskService: taskService) {
   
@@ -26,10 +23,10 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  effacer(id){
-  console.log(id)
-   this.taskService.tasks.splice(id);
-   console.log(this.taskService.tasks)
-  };
+  // effacer(id){
+  // console.log(id)
+  //  this.taskService.tasks.splice(id);
+  //  console.log(this.taskService.tasks)
+  // };
 
 }
